@@ -22,6 +22,6 @@ Chào mừng bạn đến với GitHub của chúng tôi! Đây là nơi chúng 
 - **Thông Báo Phát Hành:** Được cập nhật về các phiên bản phần mềm mới, cải tiến, và sửa lỗi.
 
 #### Liên Hệ
-- **Liên Hệ Chúng Tôi:** Nếu có bất kỳ thắc mắc hay đề xuất nào, hãy liên hệ chúng tôi tại [email@example.com](mailto:dnguyenphuong306@gmail.com).
+- **Liên Hệ Chúng Tôi:** Nếu có bất kỳ thắc mắc hay đề xuất nào, hãy liên hệ chúng tôi tại [info@example.com](mailto:dnguyenphuong306@gmail.com).
 
 Chúng tôi mong rằng mã nguồn này sẽ hữu ích cho cộng đồng và đóng góp vào sự phát triển của nông nghiệp thông minh và bền vững.
