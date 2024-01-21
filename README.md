@@ -1,4 +1,4 @@
-# Khoahockithuat
+# Khoa Học Kỹ Thuật
 Chào mừng bạn đến với GitHub của chúng tôi! Đây là nơi chúng tôi chia sẻ mã nguồn mở cho hệ thống quản lý môi trường nông nghiệp thông minh. Dưới đây là một sự giới thiệu về những gì bạn có thể tìm thấy trên repository của chúng tôi:
 
 ### Hệ Thống Quản Lý Môi Trường Nông Nghiệp Thông Minh
