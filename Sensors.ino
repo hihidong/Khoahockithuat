@@ -15,32 +15,35 @@ int receivedLampStatus = 0;
 
 void setup() {
   Serial.begin(115200);  // Baud rate ở đây phải khớp với ESP8266
-  dht.begin();
+  dht.begin(); // khởi động cảm biến
   lightMeter.begin();   // Khởi động cảm biến
+  // Khởi động màn Lcd
   lcd.init();
   lcd.backlight();
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Sensor Data:");
 }
+// Đọc giá trị nhiệt độ
 float readTemperature() {
   return dht.readTemperature();
 }
-
+// Đọc giá trị độ ẩm không khí
 float readHumidity() {
   return dht.readHumidity();
 }
-
+// Đọc giá trị cảm biến độ ẩm đất
 int readSoilMoisture() {
   int value = analogRead(soilMoisturePin);
   value = map(value, 0, 1024, 0, 100);
   value = (value - 100) * -1;
   return value;
 }
-
+// Đọc giá trị đèn 
 float readLightIntensity() {
   return lightMeter.readLightLevel();
 }
+// Hiển thị thông số cảm biến lên màn LCD
 void displaySensorData(float temperature, float humidity, int soilMoisture, float lightIntensity) {
   lcd.setCursor(0, 1);
   lcd.print("T:");
@@ -62,6 +65,7 @@ void displaySensorData(float temperature, float humidity, int soilMoisture, floa
   lcd.print(lightIntensity);
   lcd.print("lux");
 }
+// Gửi dữ liệu qua ESP
 void sendDataToESP(float temperature, float humidity, int soilMoisture, float lightIntensity) {
   Serial.print("T:");
   Serial.print(temperature);
@@ -72,11 +76,13 @@ void sendDataToESP(float temperature, float humidity, int soilMoisture, float li
   Serial.print("L:");
   Serial.println(lightIntensity);
 }
+
 void loop() {
   float temperature = readTemperature();
   float humidity = readHumidity();
   int soilMoisture = readSoilMoisture();
   float lightIntensity = readLightIntensity();
+  // Nhận trạng thái Pump and Lamp từ ESP
   if (Serial.available() > 0) {
         String data = Serial.readStringUntil('\n');
         Serial.println("Received data: " + data);
