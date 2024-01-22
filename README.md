@@ -8,11 +8,11 @@ Chào mừng bạn đến với GitHub của chúng tôi! Đây là nơi chúng 
 - **Dễ Mở Rộng:** Cấu trúc mã nguồn dễ mở rộng để bạn có thể tích hợp thêm các tính năng và cảm biến mới một cách thuận tiện.
 
 #### Cấu Trúc Thư Mục
-1. **Sensors:** Chứa mã nguồn liên quan đến các cảm biến như DHT22, Soil Moisture Sensor, BH1750.
-2. **ControlSystem:** Bao gồm mã nguồn cho hệ thống kiểm soát, điều khiển ánh sáng, và quản lý tưới tự động.
+1. **[Sensors:](https://github.com/hihidong/Khoahockithuat/blob/main/Sensors.ino)** Chứa mã nguồn liên quan đến các cảm biến như DHT22, Soil Moisture Sensor, BH1750.
+2. **[ControlSystem:](https://github.com/hihidong/Khoahockithuat/blob/main/ControlSystem.ino)** Bao gồm mã nguồn cho hệ thống kiểm soát, điều khiển ánh sáng, và quản lý tưới tự động.
 
 #### Hướng Dẫn Sử Dụng
-- **Bắt Đầu:** Tài liệu chi tiết để bạn có thể dễ dàng bắt đầu với mã nguồn và triển khai hệ thống trên môi trường của mình.
+- **[Bắt Đầu:](https://github.com/hihidong/Khoahockithuat/blob/main/B%E1%BA%AFt%20%C4%90%E1%BA%A7u)** Tài liệu chi tiết để bạn có thể dễ dàng bắt đầu với mã nguồn và triển khai hệ thống trên môi trường của mình.
 - **Cấu Hình:** Hướng dẫn về cách cấu hình và tùy chỉnh hệ thống theo nhu cầu của bạn.
 
 #### Đóng Góp
