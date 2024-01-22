@@ -1,0 +1,13 @@
+Cấu Hình Cảm Biến:
+
+1 Chỉnh sửa các tham số trong mã nguồn để phản ánh vị trí và chức năng của cảm biến trong sơ đồ kết nối.
+
+2 Kết Nối với Ứng Dụng Blynk:
+- Tạo một tài khoản Blynk và tạo một dự án mới.
+- Sao chép và dán "Blynk Auth Token" từ ứng dụng Blynk vào mã nguồn.
+- Tùy Chỉnh Các Thiết Đặt:
+
+3 Kiểm tra và tùy chỉnh các thiết đặt như ngưỡng độ ẩm đất, ngưỡng nhiệt độ, và ngưỡng ánh sáng theo nhu cầu của bạn.
+
+4 Sơ đồ kết nối các cảm biến với BeardBoard
+![Sơ đồ kết nối BeardBoard](https://github.com/hihidong/Khoahockithuat/blob/main/S%C6%A1%20%C4%91%E1%BB%93%20k%E1%BA%BFt%20n%E1%BB%91i%20beardboard)
