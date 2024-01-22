@@ -1,12 +1,12 @@
-#define BLYNK_TEMPLATE_ID "TMPL6fPT-Rkrm"
-#define BLYNK_TEMPLATE_NAME "Mô phỏng trang trại thông minh"
-#define BLYNK_AUTH_TOKEN "LGCzrnRa0rm25rTmJHdZx3nl3r4qw_fG"
+#define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
+#define BLYNK_TEMPLATE_NAME         "Device"
+#define BLYNK_AUTH_TOKEN            "YourAuthToken"
 #include <Wire.h>
 #include <BlynkSimpleEsp8266.h>
 #include <Bounce2.h>
 
-char ssid[] = "Dongpro";
-char pass[] = "dua50ngan";
+char ssid[] = "YourNetworkName";
+char pass[] = "YourPassword";
 
 WidgetLED PUMP(V3);  // Đèn trạng thái bơm
 WidgetLED LAMP(V4);  // Đèn trạng thái đèn
@@ -46,6 +46,7 @@ Bounce lampButton = Bounce();
 
 void setup() {
     Serial.begin(115200);
+    //Cấu hình chân Pin của đèn và bơm cũng như led báo trạng thái.
     pinMode(pumpPin, OUTPUT);
     pinMode(lampPin, OUTPUT);
     pinMode(pumpButtonPin, INPUT_PULLUP);
@@ -59,6 +60,7 @@ void setup() {
     digitalWrite(pumpPin, LOW);
     digitalWrite(lampPin, LOW);
     updateLedStatus();
+    
     pumpButton.attach(pumpButtonPin);
     pumpButton.interval(20);  // 20 milliseconds debounce time
     lampButton.attach(lampButtonPin);
@@ -72,7 +74,7 @@ void loop() {
     Blynk.run();
     updateLedStatus();
     checkPhysicalButton();
-
+    // Nhận dữ liệu các cảm biến từ arduino và gửi trạng thái về arduino
     if (Serial.available() > 0) {
         String data = Serial.readStringUntil('\n');
         Serial.println("Received data: " + data);
@@ -93,7 +95,7 @@ void loop() {
         delay(500);
     }
 }
-
+// Đọc và định dạng giá trị nhận được từ arduino
 float getValue(String data, char identifier) {
     int index = data.indexOf(identifier) + 2;
     String valueString = data.substring(index);
@@ -101,13 +103,14 @@ float getValue(String data, char identifier) {
     Serial.println("Identifier: " + String(identifier) + ", Value: " + value);
     return value;
 }
-
+// Cập nhật led
 void updateLedStatus() {
     digitalWrite(pumpStatusLed, digitalRead(pumpPin));
     digitalWrite(lampStatusLed, digitalRead(lampPin));
 }
-
+// Điều khiển nút bấm vật lý 
 void checkPhysicalButton() {
+    // Điều khiển bơm
     pumpButton.update();
     if (pumpButton.fell()) {
         manualControl = true;  // Set manual control flag
@@ -125,7 +128,7 @@ void checkPhysicalButton() {
             Blynk.virtualWrite(V4, LOW);  // Update Blynk App state
         }
     }
-
+    //Điều khiển đèn
     lampButton.update();
     if (lampButton.fell()) {
         manualControl = true;  // Set manual control flag
@@ -138,7 +141,7 @@ void checkPhysicalButton() {
             Blynk.virtualWrite(V3, LOW);  // Update Blynk App state
         }
     }
-
+    // Điều khiển bơm theo thời gian
     if (pumpStartTime > 0 && millis() - pumpStartTime >= pumpDuration) {
         digitalWrite(pumpPin, LOW);
         pumpStartTime = 0;
@@ -147,7 +150,7 @@ void checkPhysicalButton() {
     }
     updateLedStatus();
 }
-
+// Điều khiển tự động theo giá trị cảm biến
 void checkAutoControl() {
     // Auto control based on light and soil moisture thresholds
     if (lightIntensity < LIGHT_THRESHOLD && SoilMoisture < DRY_SOIL_THRESHOLD) {
@@ -160,7 +163,7 @@ void checkAutoControl() {
         digitalWrite(lampPin, LOW);
     }
 }
-
+// Gửi tín hiệu bơm lên Blynk 
 BLYNK_WRITE(V3) {  // Blynk App changes Pump button state
     int pumpControl = param.asInt();
     if (pumpControl == HIGH) {
@@ -178,7 +181,7 @@ BLYNK_WRITE(V3) {  // Blynk App changes Pump button state
     }
     updateLedStatus();
 }
-
+// Gửi tín hiệu đèn lên Blynk
 BLYNK_WRITE(V4) {  // Blynk App changes Lamp button state
     int lampControl = param.asInt();
     if (lampControl == HIGH) {
