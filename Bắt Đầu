@@ -1,0 +1,32 @@
+Hướng Dẫn Sử Dụng:
+
+1 Chuẩn Bị Đồ Dùng:
+- Cần chuẩn bị những linh kiện cho hệ thống như sau:
++ Arduino ( Uno, Mega,..).
++ ESP8266/ESP32.
++ DHT22. 
++ Moisture Sensor Soil.
++ BH1750.
++ Mạch 4 relay opto cách ly 12v.
++ Màn hình LCD.
++ Máy bơm.
++ Nguồn 5-9-12v cho Arduino.
++ Đèn LED( 2 led nhỏ báo trạng thái, 1 led vừa để chiếu sáng.
++ Nguồn ( ở đây chúng tôi chọn là pin 18650 3,2-4,2v 1500mah ) - 5 pin.
++ Dây dẫn, beardboard, điện trở.
+
+- Chuẩn bị Electroculture:
++ Hạt giống cây trồng ( rau muống, cải,...).
++ Chậu và đất trồng. 
++ Dây đồng hoặc nam châm.
+
+- Đảm bảo đường điện và kết nối mạng của bạn ổn định.
+
+2 Triển Khai Hệ Thống:
+- Tải mã nguồn từ trang Github về máy của bạn.
+- Mở dự án trong môi trường phát triển (IDE) như Arduino IDE hoặc Thonny.
+- Nạp mã nguồn lên board mạch của bạn.
+
+3 Kiểm Tra Kết Nối:
+- Đảm bảo cảm biến được kết nối đúng và không có lỗi về phần cứng.
+- Kiểm tra mạng và đảm bảo board mạch có thể kết nối với Internet.
