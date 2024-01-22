@@ -13,7 +13,7 @@ Chào mừng bạn đến với GitHub của chúng tôi! Đây là nơi chúng 
 
 #### Hướng Dẫn Sử Dụng
 - **[Bắt Đầu:](https://github.com/hihidong/Khoahockithuat/blob/main/B%E1%BA%AFt%20%C4%90%E1%BA%A7u)** Tài liệu chi tiết để bạn có thể dễ dàng bắt đầu với mã nguồn và triển khai hệ thống trên môi trường của mình.
-- **Cấu Hình:** Hướng dẫn về cách cấu hình và tùy chỉnh hệ thống theo nhu cầu của bạn.
+- **[Cấu Hình:](https://github.com/hihidong/Khoahockithuat/blob/main/C%E1%BA%A5u%20h%C3%ACnh)** Hướng dẫn về cách cấu hình và tùy chỉnh hệ thống theo nhu cầu của bạn.
 
 #### Đóng Góp
 - **Tham Gia Cùng Chúng Tôi:** Nếu bạn muốn đóng góp vào dự án, xin vui lòng xem.
