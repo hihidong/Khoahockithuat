@@ -171,13 +171,13 @@ BLYNK_WRITE(V3) {  // Blynk App changes Pump button state
         if (!manualControl) {
             pumpStartTime = millis();
             digitalWrite(pumpPin, HIGH);
-            Blynk.virtualWrite(V5, HIGH);  // Update Blynk App state
+            Blynk.virtualWrite(V3, HIGH);  // Update Blynk App state
         }
     } else {
         // Turn off pump
         digitalWrite(pumpPin, LOW);
         pumpStartTime = 0;
-        Blynk.virtualWrite(V5, LOW);  // Update Blynk App state
+        Blynk.virtualWrite(V3, LOW);  // Update Blynk App state
     }
     updateLedStatus();
 }
@@ -188,12 +188,12 @@ BLYNK_WRITE(V4) {  // Blynk App changes Lamp button state
         // Turn on lamp only if not in manual control
         if (!manualControl) {
             digitalWrite(lampPin, HIGH);
-            Blynk.virtualWrite(V6, HIGH);  // Update Blynk App state
+            Blynk.virtualWrite(V4, HIGH);  // Update Blynk App state
         }
     } else {
         // Turn off lamp
         digitalWrite(lampPin, LOW);
-        Blynk.virtualWrite(V6, LOW);  // Update Blynk App state
+        Blynk.virtualWrite(V4, LOW);  // Update Blynk App state
     }
     updateLedStatus();
 }
